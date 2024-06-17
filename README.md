@@ -14,7 +14,7 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
    git clone https://github.com/tu-usuario/robot-api.git  
    cd Incapto-API-TEST
 
-2. Instala las dependencias
+2. Instala las dependencias  
    composer install
 
 3. Iniciar el servidor
