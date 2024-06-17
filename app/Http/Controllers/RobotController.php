@@ -19,7 +19,7 @@ class RobotController extends Controller
 
     public function move(Request $request)
     {
-        
+
         $request->validate([
             'commands' => ['required', 'string', new ValidCommands(),],
 
@@ -30,7 +30,5 @@ class RobotController extends Controller
         $result = $this->robotService->moveRobot($commands);
 
         return response()->json(['final-robot-position' => $result]);
-
     }
-
 }

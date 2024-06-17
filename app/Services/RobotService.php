@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+
 use Log;
 
 class RobotService
@@ -8,44 +9,42 @@ class RobotService
     private $gridSize = 10;
     private $robotPosition;
     private $robotDirectionIndex;
-    private $directions = ['N','E','S','W'];
+    private $directions = ['N', 'E', 'S', 'W'];
     private $simplifyCommand = true;
 
-    public function moveRobot($commands){
+    public function moveRobot($commands)
+    {
 
         $this->robotPosition = [0, 0];
         $this->robotDirectionIndex = 0;
 
-        if($this->simplifyCommand){
+        if ($this->simplifyCommand) {
             $commands = $this->simplyfyCommands($commands);
         }
-    
-        $commands = str_split($commands);
 
         $this->logGrid($this->robotPosition[0], $this->robotPosition[1], $this->directions[$this->robotDirectionIndex]);
 
-        foreach ($commands as $command) {
-            
-            if($command === "R"){
+        for ($i = 0; $i < strlen($commands); $i++) {
+
+            if ($commands[$i] === "R") {
                 $this->turnRight();
-            }elseif($command === "L"){
+            } elseif ($commands[$i] === "L") {
                 $this->turnLeft();
-            }else{
+            } else {
                 $this->moveForward();
             }
 
             $this->logGrid($this->robotPosition[0], $this->robotPosition[1], $this->directions[$this->robotDirectionIndex]);
-
         }
 
         return $this->robotPosition[0] . ':' . $this->robotPosition[1] . ':' . $this->directions[$this->robotDirectionIndex];
-
     }
 
-    private function turnRight(){
-        $this->robotDirectionIndex ++;
+    private function turnRight()
+    {
+        $this->robotDirectionIndex++;
 
-        if($this->robotDirectionIndex > 3)
+        if ($this->robotDirectionIndex > 3)
             $this->robotDirectionIndex = 0;
     }
 
@@ -57,7 +56,8 @@ class RobotService
             $this->robotDirectionIndex = 3;
     }
 
-    private function moveForward(){
+    private function moveForward()
+    {
         switch ($this->directions[$this->robotDirectionIndex]) {
             case "N":
                 $this->robotPosition[1]++;
@@ -83,16 +83,14 @@ class RobotService
                     $this->robotPosition[0] = $this->gridSize - 1;
                 }
         }
-
-     
-
     }
 
-    private function simplyfyCommands($commands){
+    private function simplyfyCommands($commands)
+    {
 
         $simplifiedCommands = "";
         $lastCount = 0;
-        for($i = 0 ; $i < strlen($commands) ; $i++){
+        for ($i = 0; $i < strlen($commands); $i++) {
 
             if ($commands[$i] === "M") {
 
@@ -116,10 +114,9 @@ class RobotService
             $simplifiedCommands .= str_repeat('R', $lastCount % 4);
         } elseif ($lastCount < 0) {
             $simplifiedCommands .= str_repeat('L', abs($lastCount) % 4);
-        }   
+        }
 
         return $simplifiedCommands;
-
     }
 
     private function logGrid($x, $y, $direction)
@@ -137,5 +134,4 @@ class RobotService
 
         Log::info("\n" . $gridString);
     }
-
 }
