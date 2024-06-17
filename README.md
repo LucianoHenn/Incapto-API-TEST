@@ -25,7 +25,7 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
 ### Mover al Robot
 
 #### URL
-POST /api/move-robot
+POST /api/robot/move
 
 Parámetros
 
