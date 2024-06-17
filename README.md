@@ -17,7 +17,7 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
 2. Instala las dependencias  
    composer install
 
-3. Iniciar el servidor
+3. Iniciar el servidor  
     php artisan serve
 
 ## Descripción del Endpoint
