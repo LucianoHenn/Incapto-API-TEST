@@ -12,7 +12,7 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
 
 1. Clona el repositorio:
    git clone https://github.com/tu-usuario/robot-api.git
-   cd robot-api
+   cd Incapto-API-TEST
 
 2. Instala las dependencias
    composer install
