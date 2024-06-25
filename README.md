@@ -10,14 +10,14 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
 
 ## Instalación
 
-1. Clona el repositorio:
-   git clone https://github.com/tu-usuario/robot-api.git
-   cd robot-api
+1. Clona el repositorio:  
+   git clone https://github.com/tu-usuario/Incapto-API-TEST.git
+   cd Incapto-API-TEST
 
-2. Instala las dependencias
+2. Instala las dependencias  
    composer install
 
-3. Iniciar el servidor
+3. Iniciar el servidor  
     php artisan serve
 
 ## Descripción del Endpoint
@@ -25,7 +25,7 @@ Este proyecto es una API desarrollada en Laravel para controlar el movimiento de
 ### Mover al Robot
 
 #### URL
-POST /api/move-robot
+POST /api/robot/move
 
 Parámetros
 
@@ -63,6 +63,7 @@ La API valida que el campo commands:
 	•	app/Http/Controllers/RobotController.php: Controlador principal que maneja las solicitudes API.
 	•	app/Services/RobotService.php: Servicio que contiene la lógica de movimiento y simplificación de comandos del robot.
 	•	app/Rules/ValidCommands.php: Regla de validación personalizada para los comandos.
+<<<<<<< HEAD
 
 
 ## Docker
@@ -77,3 +78,5 @@ docker build -t incapto/rest-api -f Dockerfile .
 docker run -it -w/app -v$(pwd):/app -p8080:8080 incapto/rest-api php -S 0.0.0.0:8080 -t /app/public
 # Open http://127.0.0.1:8080 in your browser
 ```
+=======
+>>>>>>> c30e7efe6b46bdc3ef79f8088a7a415b08592d40
