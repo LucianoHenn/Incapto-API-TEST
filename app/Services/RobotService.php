@@ -37,7 +37,9 @@ class RobotService
             $this->logGrid($this->robotPosition[0], $this->robotPosition[1], $this->directions[$this->robotDirectionIndex]);
         }
 
-        return $this->robotPosition[0] . ':' . $this->robotPosition[1] . ':' . $this->directions[$this->robotDirectionIndex];
+        $x = $this->robotPosition[0] + 1;
+        $y =  $this->robotPosition[1] + 1;
+        return $x . ':' . $y . ':' . $this->directions[$this->robotDirectionIndex];
     }
 
     private function turnRight()

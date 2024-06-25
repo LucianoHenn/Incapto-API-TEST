@@ -64,6 +64,10 @@ La API valida que el campo commands:
 	•	app/Services/RobotService.php: Servicio que contiene la lógica de movimiento y simplificación de comandos del robot.
 	•	app/Rules/ValidCommands.php: Regla de validación personalizada para los comandos.
 
+## Correr tests
+```bash
+./vendor/bin/phpunit  tests/RobotTest.php
+```
 
 ## Docker
 
