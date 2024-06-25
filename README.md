@@ -63,3 +63,17 @@ La API valida que el campo commands:
 	•	app/Http/Controllers/RobotController.php: Controlador principal que maneja las solicitudes API.
 	•	app/Services/RobotService.php: Servicio que contiene la lógica de movimiento y simplificación de comandos del robot.
 	•	app/Rules/ValidCommands.php: Regla de validación personalizada para los comandos.
+
+
+## Docker
+
+### 🧱 Crear imagen
+```bash
+docker build -t incapto/rest-api -f Dockerfile .
+```
+
+### ⌨️ Levantar entorno de desarrollo
+```bash
+docker run -it -w/app -v$(pwd):/app -p8080:8080 incapto/rest-api php -S 0.0.0.0:8080 -t /app/public
+# Open http://127.0.0.1:8080 in your browser
+```
