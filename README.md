@@ -77,5 +77,3 @@ docker build -t incapto/rest-api -f Dockerfile .
 docker run -it -w/app -v$(pwd):/app -p8080:8080 incapto/rest-api php -S 0.0.0.0:8080 -t /app/public
 # Open http://127.0.0.1:8080 in your browser
 ```
-=======
->>>>>>> c30e7efe6b46bdc3ef79f8088a7a415b08592d40
